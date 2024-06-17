@@ -7,5 +7,5 @@ This is the repository for the Min P paper! Here, you will find the following:
 
 ## External links:
 - **Colab notebook to replicate GPQA and GSM8K evals:** If you’d like to replicate the GPQA and GSM8K COT evaluations in the paper, you may do so at  [this Google Colab Notebook.](https://colab.research.google.com/drive/1lpBoRzw273VXOECaz8AXGJlqI3wuYrEM)
-- **Logs for AlpacaEval Creative Writing:** For logs of the independently run AlpacaEval Creative Writing evals for Min P, see https://github.com/IlyaGusev/quest _(not affiliated with authors)_
-- **Interactive Demo:** For the independently created interactive demo, check out https://artefact2.github.io/llm-sampling/index.xhtml _(not affiliated with authors)_
+- **Logs for AlpacaEval Creative Writing:** For logs of the independently run AlpacaEval Creative Writing evals for Min P, see [https://github.com/IlyaGusev/quest](https://github.com/IlyaGusev/quest) _(not affiliated with authors)_
+- **Interactive Demo:** For the independently created interactive demo, check out [https://artefact2.github.io/llm-sampling/index.xhtml](https://artefact2.github.io/llm-sampling/index.xhtml) _(not affiliated with authors)_
