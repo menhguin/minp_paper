@@ -23,7 +23,7 @@ output = model.generate(
     input_ids,
     do_sample=True,        # Enable sampling
     top_p=0.9,             # Cumulative probability threshold
-    min_p=0.1
+    min_p=0.1,
     max_length=50          # Maximum length of generated text
 )
 ```
