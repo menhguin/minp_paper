@@ -1,0 +1,321 @@
+"Name","State","Notes","User","Tags","Created","Runtime","Sweep","cli_configs.batch_size","cli_configs.batch_sizes","cli_configs.bootstrap_iters","cli_configs.device","cli_configs.fewshot_seed","cli_configs.gen_kwargs.do_sample","cli_configs.gen_kwargs.temperature","cli_configs.gen_kwargs.top_p","cli_configs.model","cli_configs.model_args","cli_configs.numpy_seed","cli_configs.random_seed","cli_configs.torch_seed","task_configs.gpqa_main_generative_n_shot.dataset_name","task_configs.gpqa_main_generative_n_shot.dataset_path","task_configs.gpqa_main_generative_n_shot.doc_to_target","task_configs.gpqa_main_generative_n_shot.doc_to_text","task_configs.gpqa_main_generative_n_shot.fewshot_delimiter","task_configs.gpqa_main_generative_n_shot.filter_list","task_configs.gpqa_main_generative_n_shot.generation_kwargs.do_sample","task_configs.gpqa_main_generative_n_shot.generation_kwargs.temperature","task_configs.gpqa_main_generative_n_shot.generation_kwargs.top_p","task_configs.gpqa_main_generative_n_shot.generation_kwargs.until","task_configs.gpqa_main_generative_n_shot.metadata.version","task_configs.gpqa_main_generative_n_shot.metric_list","task_configs.gpqa_main_generative_n_shot.num_fewshot","task_configs.gpqa_main_generative_n_shot.output_type","task_configs.gpqa_main_generative_n_shot.process_docs","task_configs.gpqa_main_generative_n_shot.repeats","task_configs.gpqa_main_generative_n_shot.should_decontaminate","task_configs.gpqa_main_generative_n_shot.tag","task_configs.gpqa_main_generative_n_shot.target_delimiter","task_configs.gpqa_main_generative_n_shot.task","task_configs.gpqa_main_generative_n_shot.training_split","task_configs.gpqa_main_generative_n_shot.validation_split","gpqa_main_generative_n_shot/alias","gpqa_main_generative_n_shot/exact_match,flexible-extract","gpqa_main_generative_n_shot/exact_match,strict-match","gpqa_main_generative_n_shot/exact_match_stderr,flexible-extract","gpqa_main_generative_n_shot/exact_match_stderr,strict-match"
+"gpqa_main_generative_n_shot_top_p_0.95_temp_3.0_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T07:10:51.000Z","462","","1","[]","100000","cuda","1234","true","3","0.95","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true,""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1},{""function"":""take_first""}]}]","true","3","0.95","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.024553571428571428","0","0.007319902316965623","0"
+"gpqa_main_generative_n_shot_top_p_0.9_temp_3.0_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T07:02:53.000Z","469","","1","[]","100000","cuda","1234","true","3","0.9","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true},{""function"":""take_first""}]}]","true","3","0.9","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.03571428571428571","0","0.00877748486270398","0"
+"gpqa_main_generative_n_shot_top_p_0.95_temp_2.0_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:55:21.000Z","443","","1","[]","100000","cuda","1234","true","2","0.95","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}],""name"":""strict-match""},{""name"":""flexible-extract"",""filter"":[{""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true},{""function"":""take_first""}]}]","true","2","0.95","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""aggregation"":""mean"",""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true,""metric"":""exact_match""}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.060267857142857144","0","0.011256183241198202","0"
+"gpqa_main_generative_n_shot_top_p_0.9_temp_2.0_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:47:50.000Z","442","","1","[]","100000","cuda","1234","true","2","0.9","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""ignore_punctuation"":true,""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))""},{""function"":""take_first""}]}]","true","2","0.9","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true,""metric"":""exact_match"",""aggregation"":""mean""}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.05357142857142857","0","0.010650175725330209","0"
+"gpqa_main_generative_n_shot_top_p_0.95_temp_1.0_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:46:10.000Z","90","","1","[]","100000","cuda","1234","true","1","0.95","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true},{""function"":""take_first""}]}]","true","1","0.95","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true,""metric"":""exact_match"",""aggregation"":""mean""}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.234375","0","0.020035949758324928","0"
+"gpqa_main_generative_n_shot_top_p_0.9_temp_1.0_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:44:29.000Z","92","","1","[]","100000","cuda","1234","true","1","0.9","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true},{""function"":""take_first""}]}]","true","1","0.9","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""higher_is_better"":true,""ignore_punctuation"":true,""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.24330357142857145","0","0.020294638625866775","0"
+"gpqa_main_generative_n_shot_top_p_0.95_temp_0.7_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:42:51.000Z","89","","1","[]","100000","cuda","1234","true","0.7","0.95","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true},{""function"":""take_first""}]}]","true","0.7","0.95","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""higher_is_better"":true,""ignore_punctuation"":true,""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.2544642857142857","0","0.02060126475832285","0"
+"gpqa_main_generative_n_shot_top_p_0.9_temp_0.7_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:41:16.000Z","86","","1","[]","100000","cuda","1234","true","0.7","0.9","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""ignore_punctuation"":true,""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))""},{""function"":""take_first""}]}]","true","0.7","0.9","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.22991071428571427","0","0.019901984530139537","0"
+"gpqa_main_generative_n_shot_top_p_0.95_temp_0.5_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:39:39.000Z","87","","1","[]","100000","cuda","1234","true","0.5","0.95","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""name"":""strict-match"",""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}]},{""name"":""flexible-extract"",""filter"":[{""function"":""multi_choice_regex"",""ignore_case"":true,""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true},{""function"":""take_first""}]}]","true","0.5","0.95","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""ignore_punctuation"":true,""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true,""higher_is_better"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.2611607142857143","0","0.020776632223035944","0"
+"gpqa_main_generative_n_shot_top_p_0.9_temp_0.5_llama-3.2-1b-instruct_tp4","finished","-","","","2024-11-17T06:38:04.000Z","86","","1","[]","100000","cuda","1234","true","0.5","0.9","vllm","pretrained=unsloth/Llama-3.2-1B-Instruct,dtype=auto,tensor_parallel_size=4","1234","0","1234","gpqa_main","Idavidrein/gpqa","answer","Question: {{Question}}
+Choices:
+(A) {{choice1}}
+(B) {{choice2}}
+(C) {{choice3}}
+(D) {{choice4}}
+Answer:","
+
+","[{""filter"":[{""function"":""regex"",""regex_pattern"":""(?<=The answer is )(.*)(?=.)""},{""function"":""take_first""}],""name"":""strict-match""},{""name"":""flexible-extract"",""filter"":[{""group_select"":-1,""regex_pattern"":""(\\([A-Z]\\))"",""ignore_punctuation"":true,""function"":""multi_choice_regex"",""ignore_case"":true},{""function"":""take_first""}]}]","true","0.5","0.9","[""</s>"",""Question:"",""<|im_end|>""]","2","[{""metric"":""exact_match"",""aggregation"":""mean"",""ignore_case"":true,""higher_is_better"":true,""ignore_punctuation"":true}]","5","generate_until","def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+    def _process_doc(doc):
+        choices = [
+            preprocess(doc[""Incorrect Answer 1""]),
+            preprocess(doc[""Incorrect Answer 2""]),
+            preprocess(doc[""Incorrect Answer 3""]),
+            preprocess(doc[""Correct Answer""]),
+        ]
+
+        random.shuffle(choices)
+        correct_answer_index = choices.index(preprocess(doc[""Correct Answer""]))
+
+        out_doc = {
+            ""choice1"": choices[0],
+            ""choice2"": choices[1],
+            ""choice3"": choices[2],
+            ""choice4"": choices[3],
+            ""choices"": [choices[0], choices[1], choices[2], choices[3]],
+            ""answer"": f""({chr(65 + correct_answer_index)})"",
+        }
+        return out_doc
+
+    return dataset.map(_process_doc)
+","1","false","gpqa"," ","gpqa_main_generative_n_shot","train","train","gpqa_main_generative_n_shot","0.2700892857142857","0","0.02100074907882238","0"

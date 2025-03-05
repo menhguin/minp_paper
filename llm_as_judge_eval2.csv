@@ -1,0 +1,54 @@
+"Name","State","Notes","User","Tags","Created","Runtime","Sweep","min_p_values","model","temperatures","top_p_values","judge_feedback","min_p","min_p_creativity","min_p_emotional_impact","min_p_imagery","min_p_narrative_flow","min_p_originality","min_p_position","min_p_story","prompt","temperature","top_p","top_p_creativity","top_p_emotional_impact","top_p_imagery","top_p_narrative_flow","top_p_originality","top_p_story","winner"
+"mistralai/Mistral-7B-v0.1-sampling-eval","finished","-","","","2024-11-18T17:14:32.000Z","2476","","[0.05,0.1,0.2]","mistralai/Mistral-7B-v0.1","[0.5,1,2,3,5]","[0.9,0.95,0.99]","Response 1 attempts to create a story but largely fails due to poor structure and lack of coherence. The given text ""*Fiction*""—That"":"" does not convey any meaningful narrative or thematic development.
+
+Response 2, unfortunately, does not provide any actual text, only a list of themes and character emotions such as "":heart2:_Sleep and relaxation:"" and ""in_love (for both sides)"", with no story written. This inherently results in a lack of any narrative elements to evaluate.
+
+In terms of creativity, originality, narrative flow, emotional impact, and imagery, Response 1 scores higher as it at least attempts a narrative though it was still incoherent. Response 2 cannot score on these aspects as it provides no text to analyze.
+
+Overall, Response 1 is selected as the winner by default, as it contains an attempt at storytelling, even though minimal.","0.2","0","0","0","0","0","2","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""} {""short_story_text"": """",
+
+        ""writing_complexity"" : 8,""themes"": ["":heart2:_Sleep and relaxation:\ud834\ufac3:""            ,""embarased and crying ""            ,""in_love (for both sides)""        ,""family:litter:\r""]       }","Write a story about a world where time suddenly starts moving backwards in the following schema: ","5","0.99","1","1","1","1","1","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""} {
+     ""themes""         
+:    [""War is always present; in times; good ;of bad or or something that does help man against their situation ""]       
+ 	,""short_story_text""       
+:   	 ""*Fiction*\""—That\"":""	,
+ ""writing_complexity"":       1  	   
+}         ","2"
+"unsloth/Llama-3.2-1B-Instruct-sampling-eval","finished","-","","","2024-11-18T16:33:47.000Z","2393","","[0.05,0.1,0.2]","unsloth/Llama-3.2-1B-Instruct","[0.5,1,2,3,5]","[0.9,0.95,0.99]","Both Response 1 and Response 2 lack any creative text or articulated narratives. They appear as incomplete or malformed attempts to specify a structure for a story rather than actual stories themselves. As a result, it is impossible to evaluate any aspect of creativity, originality, narrative flow, emotional impact, or imagery because there is no content present in either response to assess. Without any text, neither response fulfills the criteria of being a creative writing sample, and both are equally inadequate in this regard.","0.2","0","0","0","0","0","2","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""} 
+
+
+
+
+
+    	{
+		   ""themes""     :  
+	   		[
+
+	
+	       ""\""Theme#12_Gastronomy: An Examination from The Garden, Expects its Return&quot;: [""  
+	        ]	 
+      ,
+ 
+	
+	   	 ""short_story_text"":""	"",
+           ""writing_complexity""
+ 					 
+ 
+	:
+
+
+
+
+
+	     888
+ 	}			
+	       ","Write a story about a world where time suddenly starts moving backwards in the following schema: ","5","0.99","0","0","0","0","0","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}	
+		
+	
+				 {	          	""short_story_text"":"""",""themes"":     [],					""writing_complexity"":		    				101        		
+ }
+
+
+
+ 
+		 		 ","2"
