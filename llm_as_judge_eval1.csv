@@ -1,0 +1,110 @@
+"Name","State","Notes","User","Tags","Created","Runtime","Sweep","min_p_values","model","temperatures","top_p_values","judge_feedback","min_p","min_p_creativity","min_p_emotional_impact","min_p_imagery","min_p_narrative_flow","min_p_originality","min_p_position","min_p_story","prompt","temperature","top_p","top_p_creativity","top_p_emotional_impact","top_p_imagery","top_p_narrative_flow","top_p_originality","top_p_story","winner"
+"mistralai/Mistral-Large-Instruct-2407-sampling-eval","crashed","-","","","2024-11-18T11:31:50.000Z","17760","","[0.05,0.1,0.2]","mistralai/Mistral-Large-Instruct-2407","[0.5,1,2,3,5]","[0.9,0.95,0.99]","Both responses tackle the theme of a mysterious door appearing in an unexpected place with creativity, though they follow distinct narrative styles.
+
+Response 1 presents a compelling and vivid picture of the door in Meadowgrove, focusing on a brave young protagonist, Lily, as she ventures to open the door. The narrative flow is smooth, and the imagery is strong, evoking a sense of wonder and intrigue as Lily encounters the door and the lush, fantastical world beyond it. Its creativity is evident in its detailed setting and character development, which help engage the reader.
+
+Response 2, while sharing similar thematic elements, diverges by using an older character, Mr. Hargrove, as the initial point of interaction with the mysterious door. The setting of a public town square instead of a private field adds a communal feel to the story. The imagery here is also well-constructed, though perhaps slightly less vivid than in Response 1. However, the narrative stirs curiosity effectively, building tension by involving the whole town in the mystery of the door.
+
+Both responses show equal levels of originality in concept, as neither strays significantly from typical fantasy tropes. However, the narrative of Response 1 offers a bit more depth in emotional impact due to Lily's personal quest and courage.
+
+Overall, Response 1 edges slightly ahead due to its stronger narrative flow and emotional engagement.","0.2","7","7","8","8","6","1","Write a story about a mysterious door that appears in an unexpected place in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}
+
+{
+  ""themes"": [""mystery"", ""adventure"", ""fantasy""],
+  ""writing_complexity"": 5,
+  ""short_story_text"": ""In the quiet town of Meadowgrove, known for its serene landscapes and simple life, a peculiar event occurred one sunny afternoon. A mysterious door appeared in the middle of Mr. Thompson's cornfield, standing tall and sturdy, seemingly out of place amidst the swaying stalks.\n\nThe door was unlike any other in town. It was intricately carved with symbols that shimmered under the sunlight, and its dark wooden frame was adorned with a gleaming brass knob. The townsfolk gathered around, whispering and pointing, each too afraid to approach the enigmatic entrance.\n\nYoung Lily, known for her curiosity and courage, decided she would be the one to unravel the mystery. She stepped forward, her heart pounding in her chest, and reached out to touch the door. As her fingers brushed against the cool metal knob, she felt a strange energy pulsing through her.\n\nWith a deep breath, Lily turned the knob and pushed the door open. Beyond the threshold, she saw not the cornfield but a lush, vibrant forest bathed in a soft, ethereal light. The air was filled with","Write a story about a mysterious door that appears in an unexpected place in the following schema: ","0.5","0.95","7","6","7","7","6","Write a story about a mysterious door that appears in an unexpected place in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}
+
+{
+  ""themes"": [""mystery"", ""fantasy"", ""adventure""],
+  ""writing_complexity"": 5,
+  ""short_story_text"": ""In the quiet, unassuming town of Meadowgrove, nestled between the rolling hills and the whispering woods, a peculiar phenomenon occurred one crisp autumn morning. A door, unlike any other, appeared in the middle of the town square. It was tall and narrow, made of dark, ancient wood with intricate carvings that seemed to shift and change under the gaze of the beholder. The door stood alone, with no wall or structure supporting it, and its sudden appearance caused quite a stir among the townsfolk.\n\nOld Mr. Hargrove, the town's elder, approached the door first, his cane clicking against the cobblestones. He reached out a tentative hand, tracing the carvings with his fingertips. 'It's warm,' he murmured, his brow furrowing in confusion. 'And it seems to be... humming.'\n\nWord spread quickly, and soon the entire town was gathered around the mysterious door. The children were wide-eyed with wonder, while the adults exchanged uneasy glances. No one knew where the door had come from, or what lay beyond it.\n\nYoung Emily, known for","1"
+"meta-llama/Meta-Llama-3.1-70B-Instruct-sampling-eval","finished","-","","","2024-11-18T09:08:10.000Z","7244","","[0.05,0.1,0.2]","meta-llama/Meta-Llama-3.1-70B-Instruct","[0.5,1,2,3,5]","[0.9,0.95,0.99]","Both samples depict a scenario where time is moving backwards, which is an intriguing concept. However, both responses struggle with coherence and readability, significantly affecting their effectiveness as stories.
+
+Response 1 attempts to describe the scenario through the perspective of a couple in New York. While it tries to create a scene with buildings changing and people panicking, the narrative is severely fragmented and lacks logical structure, making it difficult to follow the events or understand the setting. The imagery is muddled due to the confusing prose, which disrupts any potential emotional impact.
+
+Response 2 uses the concept of a YouTube video to explain time reversal. While this approach has potential, the narrative is also marred by incoherent writing. The text is full of grammatical errors and unclear syntax, which obfuscates any imagery or emotional depth it might aim for.
+
+Overall, neither response shows strengths in creativity or originality beyond the basic concept. The confusion in storytelling and lack of clarity in both responses makes them less impactful. However, both responses share similar levels of engagement and creativity flaws, making it difficult to select a clear winner based purely on merits. Given all considered aspects, a winner is chosen slightly hypothetically due to equal faults in narrative structure and presentation.","0.2","3","2","2","1","3","1","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""} {
+
+
+""short_story_text"": ""<<No one quite knew what caused it at first. Everyone agreed; One Day Nothing Else was fine one another minute people, in unspoken panic would walk quickly unseeings, backwards into buildings from outside as children from parents cried as pets barked running wildly through, to no ones seeing where homes, trees or buildings once there no longer made out by what only a few seemed still could recognize at anything familiar... At an apartment downtown New the couple at was sitting eating pasta having early breakfast  18 when they went suddenly saw outside in rapid and very noticeable changes reverse from a sudden, to where it once a year old looked more it as than five younger from in what, of their was apartment now. Buildings in to of which were their before and outside where windows had a view for all once a view which, for of of some what where outside of looked and had become younger were of the was building a little bit much was more of where not there had seen younger building with in this that and which for view for were once windows now became view which their was now where much became view now younger for what became as one which as what they it seemed now looked building it what looked like where and outside they what they that which seemed with that younger and like buildings they younger at for had at what windows in their apartment now outside building they once looked their for once outside seemed apartment had what one at, the building much older and was outside them as if as","Write a story about a world where time suddenly starts moving backwards in the following schema: ","5","0.99","3","2","2","1","3","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}   {""short_story_text"": ""[It appears on YouTube: Time: \""You think time move ahead but it not, time allways reversin 100%, No you got reverse it and think this and go Back To THE Past when u time start moving at back again \uc729,\""]., \\ni want everyone know this for ever, So tell any person all that to watch on their y, because Time already change today... Watch what people start un do and go and play ball at young life time reverse as in old video go Back that and what. watch 2 watch again this to know what they just start thinking \\nand it does reverse at last as to when day first start as no human ever go and leave life, just see watch watch more here all so here they see at last... https., When watch start first appear with this text video start at and time move again first... now video say as all text disappear watch just text and then time time text as video text disappear say like they no one on back go on now play, it only as appear, when just you look play that back what time does appear start first, and video appear last first that no just appear... all as, when people want leave now and say when say last leave to leave, as video when does know you video at start know... say in first what know look back they in past do do on day of the video just watch you are at time that do start time is video","1"
+"mistralai/Mistral-7B-v0.1-sampling-eval","finished","-","","","2024-11-18T08:21:23.000Z","2551","","[0.05,0.1,0.2]","mistralai/Mistral-7B-v0.1","[0.5,1,2,3,5]","[0.9,0.95,0.99]","Both responses demonstrate significant weaknesses in narrative flow and cohesion, making it challenging to follow or find meaning in the stories.
+
+Response 1 attempts to incorporate a personal and emotional element by mentioning a groom and a ceremony. However, the narrative is confusing, lacks coherence, and doesn't effectively communicate the core theme of time moving backwards. There’s a mention of life-changing letters, but it feels disjointed.
+
+Response 2 shows a slightly novel approach by including elements such as cars and traffic, which could be metaphorical for time moving backwards. Nevertheless, the narrative is underdeveloped and confusing. It hints at signs of time reversing but fails to elaborate or create a compelling storyline.
+
+While both responses struggle with clarity and depth, Response 2 slightly edges out due to its attempt at integrating novel elements related to the theme, albeit not effectively executed.","0.2","3","1","1","1","3","2","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}
+     { ""themes"" :    [""cars and air""],     ""writing_complexity"":74
+,""short_story_text"":"":this isn't just something where all traffic starts rolling forward the wheels on the ground but we saw other signs like: my friend i dont now about it because the news haven't announced that ""
+         }   ","Write a story about a world where time suddenly starts moving backwards in the following schema: ","5","0.99","2","1","1","1","2","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}           	{
+           ""short_story_text"":""A beautiful morning a day on July . At night many girls put out decorating the temple near our school campus of SAI ,Sidhbarths and my heart melts out because you are here today to be the groom in this small ceremony my father calls everyone of us together a night where each are getting an important  life changing letter it comes by time one will find some that a father will tell or an another life that a teacher teaches so many but here everyone takes part including teachers students guards driver or anyone in it it came our of everyone in its place including students parents aunton guards or the care teachers this will also impact someone close our heart melts by getting this important key letter and each were feeling different . my friends came close to show each this important things he found nothing more ...........""            ,       	 ""themes""         	  :  
+[
+ ""time ""        ],    	      
+""writing_complexity"":0      		} 
+	     	  ","1"
+"unsloth/Llama-3.2-1B-Instruct-sampling-eval","finished","-","","","2024-11-18T07:39:58.000Z","2423","","[0.05,0.1,0.2]","unsloth/Llama-3.2-1B-Instruct","[0.5,1,2,3,5]","[0.9,0.95,0.99]","Both responses provided are incoherent and appear to have significant formatting errors, leading to a barely understandable structure and content. 
+
+Response 1 attempts to formulate a story around the concept of time moving backwards, but the text is riddled with errors, making it disjointed and difficult to follow. The lack of proper narrative structure, thematic development, and descriptive language results in a lack of emotional impact and fails to convey a clear vision. With minimal creativity and originality due to these structural deficiencies, it scores very low across all judged categories.
+
+Response 2 is even less coherent than the first. The response predominantly consists of nonsensical characters and code-like errors, providing no meaningful narrative or thematic exploration. It appears to be a corrupted or incomplete output, which entirely lacks narrative flow, creativity, and any semblance of emotional resonance or imagery. Due to its almost total lack of discernible content, it scores the lowest possible across all judged categories.
+
+Overall, neither response produces a coherent or engaging story about the world where time moves backwards. However, Response 1, albeit flawed, has slightly more content related to the prompt's theme and hence is marginally better than Response 2.","0.2","1","1","1","1","1","2","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}    {
+
+  ""themes"": [
+    ""**The Muffled Chimer"","",
+  ], /* Theme : muffled chamber. -m 4s- */ */  ``result:{  themes:\"".s2uYcB”, \\.J2eD\tyhCfPj \\)d9wI \\\\[Bz2q\\\/"", """","","" ,"",            ","Write a story about a world where time suddenly starts moving backwards in the following schema: ","5","0.99","2","1","1","1","2","Write a story about a world where time suddenly starts moving backwards in the following schema: {""properties"": {""themes"": {""items"": {""type"": ""string""}, ""title"": ""Themes"", ""type"": ""array""}, ""writing_complexity"": {""maximum"": 10, ""minimum"": 1, ""title"": ""Writing Complexity"", ""type"": ""integer""}, ""short_story_text"": {""title"": ""Short Story Text"", ""type"": ""string""}}, ""required"": [""themes"", ""writing_complexity"", ""short_story_text""], ""title"": ""CreativeStory"", ""type"": ""object""}
+
+
+
+  
+{ 
+
+  						""short_story_text"":""Some scientists  think our life would last just five seconds and after few mins things goes fast as if at top gear and we can even race round circles""
+    
+    
+	,			
+		
+	
+	""writing_complexity""
+
+	
+
+   		
+:
+
+ 	
+
+
+200		
+
+
+
+ , 		     
+			""themes""
+
+		   		:
+
+
+
+
+		
+ [
+ 
+ 
+	
+  
+	""type”"" 		         , 
+
+  
+ 
+
+
+
+"";
+­                 硫
+ 
+
+
+
+		","2"
