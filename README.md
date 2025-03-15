@@ -7,7 +7,7 @@ This is the repository for the Min P paper! Here, you will find the following:
 
 ## External links:
 - **Colab notebook to replicate GPQA and GSM8K evals:** If you’d like to replicate the GPQA and GSM8K COT evaluations in the paper, you may do so at [PUBLIC]_Min_P_Evals_Replication_for_GPQA_and_GSM8K_COT.ipynb
-- **Logs for AlpacaEval Creative Writing:** For logs of the independently run AlpacaEval Creative Writing evals for Min P, see [https://github.com/IlyaGusev/quest](https://github.com/IlyaGusev/quest) _(not affiliated with authors)_. For replication instructions, see: https://github.com/menhguin/quest
+- **Logs for AlpacaEval Creative Writing:** For logs of the independently run AlpacaEval Creative Writing evals for Min P, see [https://github.com/IlyaGusev/quest](https://github.com/IlyaGusev/quest) _(not affiliated with authors)_. The original repo did not included replication instructions, so for that, see: https://github.com/menhguin/quest
 - **Interactive Demo:** For the independently created interactive demo, check out [https://artefact2.github.io/llm-sampling/index.xhtml](https://artefact2.github.io/llm-sampling/index.xhtml) _(not affiliated with authors)_
 - **Accuracy-diversity tradeoff charts:** For entropy experiment scripts, see: https://github.com/BlackHC/minp_scripts
 
